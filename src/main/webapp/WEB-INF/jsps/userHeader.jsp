@@ -19,19 +19,17 @@
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 <div class = "navbar-header">
-      <a class = "navbar-brand" href = "#"> ESHOP</a>
+      <a class = "navbar-brand" href = "Home">ESHOP</a>
    </div>
    <div class = "navbar-header">
       <a class = "navbar-brand" href = "userHome">UserHome</a>
    </div>
    <div class = "navbar-header">
-      <a class = "navbar-brand" href = "Home"> Home</a>
+      <a class = "navbar-brand" href = "myorder">MyOrders</a>
    </div>
-<div class = "navbar-header">
-      <a class = "navbar-brand" href = "aboutUs"> AboutUs</a>
-   </div>
-    <div class = "navbar-header">
-      <a class = "navbar-brand" href = "contactUs"> ContactUs</a>
+   
+   <div class = "navbar-header">
+      <a class = "navbar-brand" href = "AdminHome">AdminHome</a>
    </div>
     
  <!-- Dropdown -->
@@ -53,9 +51,7 @@
     <div class = "navbar-header">
       <a class = "navbar-brand" href = "reg"> Register</a>
    </div>
-    <div class = "navbar-header">
-      <a class = "navbar-brand" href = "login"> Login</a>
-   </div>
+    
   </ul>
 </nav>
 

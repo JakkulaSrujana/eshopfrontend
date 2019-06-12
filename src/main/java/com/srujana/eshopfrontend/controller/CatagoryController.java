@@ -29,17 +29,24 @@ public class CatagoryController {
 	@RequestMapping(value="/addcatagory",method=RequestMethod.GET)
 	public ModelAndView goToForm()
 	{
-		ModelAndView modelAndView=new ModelAndView("Home");
+		ModelAndView modelAndView=new ModelAndView("catagory");
 		Catagory catagory=new Catagory();
 		modelAndView.addObject("cat",catagory );
+		
 		modelAndView.addObject("buttonName", "AddCatagory");
 		return modelAndView;
 	}
 	@RequestMapping(value="/addcatagory",method=RequestMethod.POST)
 	public ModelAndView receiveFormData(@ModelAttribute("cat") Catagory catagory)
 	{
-		ModelAndView modelAndView=new ModelAndView("catagory");
+		ModelAndView modelAndView=new ModelAndView("adminHeader");
+		if(catagory.getCatagoryId()==0) {
 		catagoryDaoImpl.saveCategory(catagory);
+		}
+		else
+		{
+			catagoryDaoImpl.editCategory(catagory);
+		}
 		return modelAndView;
 	}
 	@RequestMapping(value="/showcatagory",method=RequestMethod.GET)
@@ -56,7 +63,9 @@ public class CatagoryController {
 	{
 		ModelAndView modelAndView=new ModelAndView("catagory");
 		
+		
 		Catagory catagory=catagoryDaoImpl.getCategory(categoryId);
+	
 		
 		modelAndView.addObject("cat",catagory);
 		modelAndView.addObject("buttonName", "UpdateCatagory");

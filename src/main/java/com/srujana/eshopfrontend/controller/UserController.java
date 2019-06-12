@@ -43,6 +43,7 @@ public class UserController {
 		
 		return mv;
 	}
+	
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public ModelAndView goToLogin(@ModelAttribute("user") User u)
 	{
@@ -108,7 +109,7 @@ public class UserController {
 		        else
 		        if(role.equals("ROLE_ADMIN"))
 		        {
-		            page="Home";
+		            page="adminHeader";
 		        }
 
 		   }//for

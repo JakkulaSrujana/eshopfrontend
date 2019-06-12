@@ -13,6 +13,11 @@ public class HomeController {
 	{
 		return "Home";
 	}
+	@RequestMapping("/AdminHome")
+	public String goToAdminHome()
+	{
+		return "adminHeader";
+	}
 	@RequestMapping("/aboutUs")
 	public String goToAboutUs()
 	{

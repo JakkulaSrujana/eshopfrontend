@@ -42,6 +42,9 @@ public class CartController {
 		
 		Product p= productDaoImpl.getProduct(pid);
 		//System.out.println(pd.getSuppAdd(1353));
+		int pq=p.getQuantity();
+		mv.addObject("productQ", pq);
+			
 		mv.addObject("showProd",p);
 		
 		
@@ -60,9 +63,10 @@ public class CartController {
 		String n=(String)session.getAttribute("uname");
 		cartDaoImpl.saveCart(p, q,n);
 		
+		mv.addObject("buttonName", "AddToCart");
 		
 		
-		System.out.println("...........In controller"+p.getProductId());
+		//System.out.println("...........In controller"+p.getProductId());
 		
 		
 		
@@ -91,15 +95,21 @@ public class CartController {
 		
 	}
 	@RequestMapping(value="/u")
-	public ModelAndView editCartData(@RequestParam("cartId") int cartId,@RequestParam("pid") int pid)
+	public ModelAndView editCartData(@RequestParam("cartId") int cartId)
 	{
 		ModelAndView modelAndView=new ModelAndView("productsDetails");
 		Cart cart=cartDaoImpl.getCart(cartId);
-		modelAndView.addObject("cart", cart);
-		goToProducts(pid);
+		//modelAndView.addObject("cart", cart);
+		System.out.println(cart.getProductId());
+		System.out.println(cart.getCartId());
+		Product p= productDaoImpl.getProduct(cart.getProductId());
 		
+		modelAndView.addObject("showProd",p);
+
+		modelAndView.addObject("buttonName", "UpdateToCart");
 		
 		
 		return modelAndView;
 	}
+	
 }

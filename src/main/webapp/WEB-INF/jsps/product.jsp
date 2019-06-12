@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@include file="adminHeader.jsp" %>
     <%@page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -28,6 +29,7 @@ ProductSupplier<sf:input path="productSupplier"/>
  </c:forEach>
 </sf:select><br>
 ProductImage<sf:input type="file" path="proImage"/>
+ProductQuantity<sf:input path="quantity"/>
 <input type="submit" value="${buttonName}">
 </sf:form>
 </body>

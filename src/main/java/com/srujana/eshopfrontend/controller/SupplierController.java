@@ -37,8 +37,16 @@ public class SupplierController {
 	@RequestMapping(value="/addsupplier",method=RequestMethod.POST)
 	public ModelAndView receiveFormData(@ModelAttribute("sup") Supplier supplier)
 	{
-		ModelAndView modelAndView=new ModelAndView("supplier");
-		supplierDaoImpl.saveSupplier(supplier);
+		ModelAndView modelAndView=new ModelAndView("adminHeader");
+		if(supplier.getSupplierId()==0)
+		{
+			supplierDaoImpl.saveSupplier(supplier);
+		}
+		else
+		{
+			supplierDaoImpl.editSupplier(supplier);
+		}
+		
 		return modelAndView;
 	}
 	@RequestMapping(value="/showsupplier",method=RequestMethod.GET)
@@ -56,6 +64,7 @@ public class SupplierController {
 		ModelAndView modelAndView=new ModelAndView("supplier");
 		
 		Supplier supplier=supplierDaoImpl.getSupplier(supplierId);
+		
 		
 		modelAndView.addObject("sup",supplier);
 		modelAndView.addObject("buttonName", "UpdateSupplier");

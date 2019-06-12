@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@page import="com.srujana.eshopbackend.model.Product" %>
     <%@include file="userHeader.jsp" %>
-    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="sform" %>
+    
 <%@page import="java.util.List"%>
 <%@page isELIgnored="false" %>
 <%@page errorPage="ExceptionalHandler.jsp" %>
@@ -26,13 +26,16 @@ ${showProd.productPrice}
 ${showProd.productSupplier}
 
 <br>
- 
+ <c:if test="${productQ<5}">
+<h2><c:out value="OutOfStock"></c:out></h2>
+</c:if>
+
  
  
 <form action="cart">
 <input type="number" name="qnum" value="0" min="1" max="5"/>
 <input type="hidden" name="pid" value="${showProd.productId}"/> 
-<input type="submit" value="AddToCart">
+<input type="submit" value="${buttonName}">
 </form>
  
   </div>

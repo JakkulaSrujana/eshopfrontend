@@ -42,9 +42,9 @@ public class ProductController {
 		ModelAndView modelAndView=new ModelAndView("product");
 		Product product=new Product();
 		
-			int productId	=(int)(Math.random()*10000);
-			product.setProductId(productId);
-		
+			//int productId	=(int)(Math.random()*10000);
+			//product.setProductId(productId);
+		//System.out.println(productId);
 		
 		List<Catagory> catagories=catagoryDaoImpl.getCategoryList();
 		modelAndView.addObject("catagoryList", catagories);
@@ -60,8 +60,14 @@ public class ProductController {
 	@RequestMapping(value="/addproduct",method=RequestMethod.POST)
 	public ModelAndView receiveFormData(@ModelAttribute("pro") Product product)
 	{
-		ModelAndView modelAndView=new ModelAndView("product");
-		productDaoImpl.saveProduct(product);
+		ModelAndView modelAndView=new ModelAndView("adminHeader");
+		if(product.getProductId()==0) {
+			productDaoImpl.saveProduct(product);
+		}
+		else
+		{
+			productDaoImpl.editProduct(product);
+		}
 		
 		MultipartFile image=product.getProImage();
 		System.out.println("------------"+image);

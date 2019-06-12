@@ -18,12 +18,14 @@
  </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-
+<div class = "navbar-header">
+      <a class = "navbar-brand" href = "Home">ESHOP</a>
+   </div>
    <div class = "navbar-header">
       <a class = "navbar-brand" href = "userHome">UserHome</a>
    </div>
    <div class = "navbar-header">
-      <a class = "navbar-brand" href = "Home"> AdminHome</a>
+      <a class = "navbar-brand" href = "AdminHome"> AdminHome</a>
    </div>
 <div class = "navbar-header">
       <a class = "navbar-brand" href = "aboutUs"> AboutUs</a>
@@ -31,46 +33,10 @@
     <div class = "navbar-header">
       <a class = "navbar-brand" href = "contactUs"> ContactUs</a>
    </div>
-    
- <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Catagories
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="addcatagory">AddCatagory</a>
-        <a class="dropdown-item" href="showcatagory">ShowCatagory</a>
-        
-        
-      </div>
-    </li>
-   
-     <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-       Suppliers
-      </a>
-      <div class="dropdown-menu">
-       
-        <a class="dropdown-item" href="addsupplier">AddSupplier</a>
-        <a class="dropdown-item" href="showsupplier">ShowSupplier</a>
-        
-      </div>
-    </li>
-  
-         <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Product
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="addproduct">AddProduct</a>
-        <a class="dropdown-item" href="showproduct">ShowProduct</a>
-        
-        
-      </div>
-    </li>
-    
+    <div class = "navbar-header">
+      <a class = "navbar-brand" href = "login"> Login</a>
+   </div>
+ 
   </ul>
 </nav>
 

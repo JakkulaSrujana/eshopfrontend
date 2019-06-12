@@ -1,14 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@include file="header.jsp" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Bootstrap Example</title>
- 
-  <style>
+  <title>Bootstrap Example</title>
   
+  <style>
   /* Make the image fully responsive */
   .carousel-inner img {
       width: 100%;
@@ -30,11 +28,14 @@
   <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="WEB_INF/l1.jpg" alt="Los Angeles" width="1100" height="500">
-      <img src="WEB_INF/l2.jpg" alt="Los Angeles" width="1100" height="500">
-      <img src="WEB_INF/l3.jpg" alt="Los Angeles" width="1100" height="500">
+      <img src="resources/product-images/3038.jpg" alt="Los Angeles" width="1100" height="500">
     </div>
-   
+    <div class="carousel-item">
+      <img src="resources/product-images/8859.jpg" alt="Chicago" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="resources/product-images/l3.jpg" alt="New York" width="1100" height="500">
+    </div>
   </div>
   
   <!-- Left and right controls -->
@@ -45,8 +46,6 @@
     <span class="carousel-control-next-icon"></span>
   </a>
 </div>
-
-
 
 </body>
 </html>

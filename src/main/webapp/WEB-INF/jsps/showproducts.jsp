@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
       <%@page isELIgnored="false" %>
       <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+      <%@include file="adminHeader.jsp" %>
       
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -21,6 +22,7 @@
 <th>Update</th>
 <th>Delete</th>
 <th>ProductImage</th>
+<th>ProductQuantity</th>
 
 </tr>
 
@@ -35,8 +37,9 @@
     
     <td><a href="up?proId=${pro.productId}">Edit</a></td>
      <td><a href="de?proId=${pro.productId}">Delete</a></td>
-     <td><img src="resources/product-images/${pro.productId }.jpg" alt="Laptop" width="50px" height="50px">
-    </td>
+     <td><img src="resources/product-images/${pro.productId }.jpg" alt="Laptop" width="50px" height="50px"></td>
+     <td>${pro.quantity}</td>
+    
     </tr>
     </c:forEach>
     </table>

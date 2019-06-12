@@ -40,8 +40,14 @@
   <sform:input path="mobile" class="form-control" id="mobile" placeholder="Enter MobileNo"/>
  </div>
  <div class="form-group">
- <sform:label  for="address" path="address">Address:</sform:label>
-  <sform:input path="address" class="form-control" id="address" placeholder="Enter address"/>
+ <sform:label  for=" shippingAdress" path= "shippingAdress">ShippindAddress:</sform:label>
+
+ HouseNo<sform:input path="shippingAdress.apartmentnumber"/>
+ StreetName<sform:input path="shippingAdress.streetname"/>
+ City<sform:input path="shippingAdress.city"/>
+ State<sform:input path="shippingAdress.state"/>
+Country<sform:input path="shippingAdress.country"/>
+ZipCode<sform:input path="shippingAdress.zipcode"/>
  </div>
  
  <button type="submit" class="btn btn-default">Register</button>
