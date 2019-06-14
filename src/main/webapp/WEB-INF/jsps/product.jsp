@@ -16,14 +16,12 @@
 ProductName<sf:input path="productName"/><br>
 ProductDescription<sf:input path="productDescription"/><br>
 ProduuctPrice<sf:input path="productPrice"/><br>
-ProdutcCatagory<sf:input path="productCatagory"/>
-<sf:select path="productCatagory">
+ProdutcCatagory<sf:select path="productCatagory">
 <c:forEach items="${catagoryList}" var="cat">
    <sf:option value="${cat.catagoryName}">${cat.catagoryName}</sf:option>
   </c:forEach>
 </sf:select>
-ProductSupplier<sf:input path="productSupplier"/>
-<sf:select path="productSupplier">
+ProductSupplier<sf:select path="productSupplier">
 <c:forEach items="${supplierList}" var="sup">
  <sf:option value="${sup.supplierName}">${sup.supplierName}</sf:option>
  </c:forEach>

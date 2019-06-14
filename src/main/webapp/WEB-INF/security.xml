@@ -18,7 +18,9 @@
 
       <security:intercept-url pattern="/cart**"
           access="hasRole('ROLE_USER')" />
-
+		
+      <security:intercept-url pattern="/myorder**"
+          access="hasRole('ROLE_USER')" />
 
 
       <security:form-login login-page="/login"

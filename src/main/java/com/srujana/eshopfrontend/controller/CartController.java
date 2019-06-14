@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -41,20 +42,21 @@ public class CartController {
 		ModelAndView mv=new ModelAndView("productsDetails");
 		
 		Product p= productDaoImpl.getProduct(pid);
-		//System.out.println(pd.getSuppAdd(1353));
+		Cart cart=new Cart();
 		int pq=p.getQuantity();
 		mv.addObject("productQ", pq);
 			
 		mv.addObject("showProd",p);
-		
+		mv.addObject("b", "AddToCart");
 		
 		return mv;
 		}
+	
 	@RequestMapping("/cart")
 	public ModelAndView addToCart(HttpServletRequest req,HttpSession session)
 	{
 		
-		ModelAndView mv=new ModelAndView("userHome");
+		ModelAndView modelAndView=new ModelAndView("userHome");
 		
 		int q=Integer.parseInt(req.getParameter("qnum"));
 		int pid=(Integer.parseInt(req.getParameter("pid")));
@@ -63,14 +65,9 @@ public class CartController {
 		String n=(String)session.getAttribute("uname");
 		cartDaoImpl.saveCart(p, q,n);
 		
-		mv.addObject("buttonName", "AddToCart");
 		
 		
-		//System.out.println("...........In controller"+p.getProductId());
-		
-		
-		
-		return mv;
+		return modelAndView;
 	}
 	@RequestMapping("/cartshow")
 	public ModelAndView showCart(HttpSession session)
@@ -104,9 +101,11 @@ public class CartController {
 		System.out.println(cart.getCartId());
 		Product p= productDaoImpl.getProduct(cart.getProductId());
 		
+		
+			//cartDaoImpl.editCart(cart);
 		modelAndView.addObject("showProd",p);
 
-		modelAndView.addObject("buttonName", "UpdateToCart");
+		modelAndView.addObject("b", "UpdateCart");
 		
 		
 		return modelAndView;

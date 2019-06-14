@@ -27,12 +27,7 @@
    <div class = "navbar-header">
       <a class = "navbar-brand" href = "AdminHome"> AdminHome</a>
    </div>
-<div class = "navbar-header">
-      <a class = "navbar-brand" href = "aboutUs"> AboutUs</a>
-   </div>
-    <div class = "navbar-header">
-      <a class = "navbar-brand" href = "contactUs"> ContactUs</a>
-   </div>
+
    
  <!-- Dropdown -->
     <li class="nav-item dropdown">
