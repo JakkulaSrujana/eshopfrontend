@@ -7,14 +7,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<title>CatagoryPage</title>
 </head>
 <body>
-<sf:form action="addcatagory" modelAttribute="cat">
-<sf:input  type="hidden"  path="catagoryId"/><br>
-CatagoryName<sf:input path="catagoryName"/><br>
-CatagoryDescription<sf:input path="catagoryDescription"/><br>
-<input type="submit" value="${buttonName}">
+<div class="container">  
+<sf:form class="form-group" action="addcatagory" modelAttribute="cat">
+<p><sf:input  type="hidden"  path="catagoryId"/></p>
+<p>CatagoryName : <sf:input path="catagoryName"/></p>
+<p>CatagoryDescription : <sf:input path="catagoryDescription"/></p>
+<p><input type="submit" value="${buttonName}"></p>
 </sf:form>
+</div>
 </body>
 </html>

@@ -103,7 +103,7 @@ public class UserController {
 
 		        if(role.equals("ROLE_USER"))
 		        {
-		            page="userHome";
+		            page="userHeader";
 
 		        }
 		        else

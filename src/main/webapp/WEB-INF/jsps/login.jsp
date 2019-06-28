@@ -8,12 +8,40 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
 </head>
 <body>
-<sf:form action="login" method="POST" modelAttribute="user">
+<script type="text/javascript">
+function check() {
+	
+	var name=document.forms["fm"]["em"].value;
+	var passwrd=document.forms["fm"]["pw"].value;
+	if(name=""){
+		alert("user name should be filled");
+		return false;
+	}
+	else
+		{
+			if(passwrd.length>8&&passwrd.length<=15)
+				{
+					return true;
+				}
+			else
+				{
+				alert("password should be atleast 8 characters and less than 15 characters");
+				return false;
+				}
+		}
+		
+	
+	
+}
 
-Email<sf:input path="email"/>
-password<sf:input path="password"/>
+</script>
+<sf:form action="login" name="fm"  modelAttribute="user" onsubmit="return check()" method="POST">
+
+Email<sf:input path="email" name="em"/>
+password<sf:input path="password" name="pw"/>
 <input type="submit" value="Login"/>
 
 </sf:form>

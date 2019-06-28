@@ -1,3 +1,6 @@
+  <%@taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,10 +43,9 @@
       <div class="dropdown-menu">
         <a class="dropdown-item" href="showProductsUser">Desktops</a>
         <a class="dropdown-item" href="showProductsUser">Laptops</a>
-        
-        
-      </div>
-      
+      <c:forEach items="${catagoryList}" var="cat"> <a class="dropdown-item" href="showProductsUser">${cat.catagoryName}</a></c:forEach>
+   </div>
+     
     </li>
     <div class = "navbar-header">
       <a class = "navbar-brand" href = "cartshow"> Cart</a>

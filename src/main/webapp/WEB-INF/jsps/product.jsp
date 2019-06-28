@@ -15,8 +15,8 @@
 <sf:input  type="hidden" path="productId"/><br>
 ProductName<sf:input path="productName"/><br>
 ProductDescription<sf:input path="productDescription"/><br>
-ProduuctPrice<sf:input path="productPrice"/><br>
-ProdutcCatagory<sf:select path="productCatagory">
+ProductPrice<sf:input path="productPrice"/><br>
+ProductCatagory<sf:select path="productCatagory">
 <c:forEach items="${catagoryList}" var="cat">
    <sf:option value="${cat.catagoryName}">${cat.catagoryName}</sf:option>
   </c:forEach>

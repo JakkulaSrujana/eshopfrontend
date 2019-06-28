@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@page import="com.srujana.eshopbackend.model.Product" %>
+    <%@taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
    
     <%@include file="userHeader.jsp" %>
     
@@ -34,14 +35,17 @@
 </c:if>
 
  
- 
-<form action="cart" method="post">
+ <sf:form action="cart" method="post" modelAttribute="crt">
+ <sf:input type="hidden" path="cartId"/>
+ <sf:input type="hidden" path="productId" value="${showProd.productId}"/>
+ <sf:input type="hidden" path="productName" value="${showProd.productName}"/>
+ <sf:input type="hidden" path="productPrice" value="${showProd.productPrice}"/>
+<sf:input type="hidden" path="productSupplier" value="${showProd.productSupplier}"/>
 
-
-<input type="number" name="qnum" value="0" min="1" max="5"/>
+ <sf:input path ="quantity" type="number" name="qnum" value="0" min="1" max="5"/>
 <input type="hidden" name="pid" value="${showProd.productId}"/> 
-<input type="submit" value="${b}"/>
-</form>
+ <input type="submit" value="${b}"/>
+ </sf:form>
  <a href="buyNow">BuyNow</a>
 
     
